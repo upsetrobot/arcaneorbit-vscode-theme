@@ -3,6 +3,8 @@
 
 VS Code theme extension
 
+testing `hello`.
+
 ## Installation Instructions
 
 ## License

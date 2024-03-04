@@ -24,15 +24,16 @@
         
 	},
 	"tokenColors": [
-        // {
-        //     "name": "header",
-        //     "scope":"m.heading",
-        //     "settings": {
-        //         "foreground": "#FF0000",
-        //         "fontStyle": "bold"
-        //     }
-        // },
-		{
+        {
+            "name": "String",
+            "scope": [
+                "markup.inline.raw.string.markdown",
+            ],
+            "settings": {
+                "foreground": "#ffff70",            // Me.
+            }
+        },
+   		{
 			"name": "Comment",
 			"scope": [
 				"comment",
