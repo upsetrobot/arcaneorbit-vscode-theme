@@ -3,7 +3,8 @@
 
 VS Code theme extension
 
-testing `hello`.
+This module is still under development.
+
 
 ## Installation Instructions
 
@@ -15,4 +16,3 @@ testing `hello`.
 
 ## Contributions
 
-## blah
