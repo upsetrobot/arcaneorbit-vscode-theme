@@ -2,38 +2,34 @@
 	"name": "ArcaneOrbit",
     "type": "dark",
 	"colors": {
-        "titleBar.activeBackground": "#080c18",
 
-        "activityBar.background": "#2f364c",
+        // Navigation.
+        "titleBar.activeBackground": "#080c18",         // #080c18 dark-darker-blue - Title Bar (very top; not typically showing).
+        "activityBar.background": "#2f364c",            // #2f364c grey-blue - Side Icon Bar (far left).
+        "sideBar.background": "#141f3d",                // #141f3d dark-blue - Side Bar (left).
+        "editorGroupHeader.tabsBackground": "#141f3d",  // dark-blue - tab background (top).
+        "tab.inactiveBackground": "#0f172e",            // #0f172e darker-blue - inactive tab (top).
 
-        "sideBar.background": "#141f3d",
-
-        "editorGroupHeader.tabsBackground": "#141f3d",
-        "tab.inactiveBackground": "#0f172e",
-		"editor.background": "#0d1326",
-		// "editor.foreground": "#a1acce",
-        "editor.foreground": "#f2f3f8",
-        "breadcrumb.background": "#030408",
-
+        // Editor.
+		"editor.background": "#0d1326",                 // #0d1326 dark-dark-blue - editor background (middle).
+        "breadcrumb.background": "#030408",             // #030408 black-blue - thing above editor (editor bar top).
+		"editor.foreground": "#dee0ed",                 // old #f2f3f8 new #dee0ed blue-white - editor base foreground (middle).
+                                                          // Used as general text color.
+        
         // "editor.lineHighlightBackground": "#ff0000",
         // "editor.symbolHighlightBackground": "#ff0000f0",
         // "editor.wordHighlightStrongBackground": "#ff0000f0",
         // "editor.wordHighlightBackground": "#ff0000f0",
         
-        "statusBar.background": "#3e4765",
+        // Bottom Status Bar.
+        "statusBar.background": "#3e4765",              // #3e4765 grey-blue-2 - status bar (bottom).
         
 	},
 	"tokenColors": [
+
+        // General.
+        // Shows in markdown, c, asm, py.
         {
-            "name": "String",
-            "scope": [
-                "markup.inline.raw.string.markdown",
-            ],
-            "settings": {
-                "foreground": "#ffff70",            // Me.
-            }
-        },
-   		{
 			"name": "Comment",
 			"scope": [
 				"comment",
@@ -41,9 +37,91 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#565e76"
+				"foreground": "#565e76"                 // #565e76 bluish-grey.
 			}
 		},
+
+        // Keywords.
+        // Markdown - backticks, numbered lists, html brackets.
+        // C - macro keywords, if, for, switch.
+        // Py - if, return, import, raise, @, ", """, ', ., ,,.
+        // ASM - colon.
+		{
+			"name": "Operator, Misc",
+			"scope": [
+				"keyword.control",
+				"constant.other.color",
+				"punctuation",
+				"meta.tag",
+				"punctuation.definition.tag",
+				"punctuation.separator.inheritance.php",
+				"punctuation.definition.tag.html",
+				"punctuation.definition.tag.begin.html",
+				"punctuation.definition.tag.end.html",
+				"punctuation.section.embedded",
+				"keyword.other.template",
+				"keyword.other.substitution"
+			],
+			"settings": {
+				"foreground": "#a6acdf"                 // Need to fix.
+			}
+		},
+
+        // Number, Constant, obvious.
+        // Seems to be as described.
+        {
+			"name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
+			"scope": [
+				"constant.numeric",
+				"constant.language",
+				"support.constant",
+				"constant.character",
+				"constant.escape",
+				"variable.parameter",
+				"keyword.other.unit",
+				"keyword.other"
+			],
+			"settings": {
+				"foreground": "#F78C6C"                 // Need to change.
+			}
+		},
+
+
+
+
+
+
+        // Markdown.
+        // Backtick quoted strings.
+        {
+            "name": "String",
+            "scope": [
+                "markup.inline.raw.string.markdown",
+            ],
+            "settings": {
+                "foreground": "#ffff60",
+            }
+        },
+
+        // String in programming?
+        {
+			"name": "String, Symbols, Inherited Class, Markup Heading",
+			"scope": [
+				"string",
+				"constant.other.symbol",
+				"constant.other.key",
+				"entity.other.inherited-class",
+				"markup.heading",
+				"markup.inserted.git_gutter",
+				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
+			],
+			"settings": {
+				"foreground": "#ffff60"                 // Need to fix.
+			}
+		},
+
+
+   		
 		{
 			"name": "Variables",
 			"scope": [
@@ -84,26 +162,7 @@
 				"foreground": "#C792EA"
 			}
 		},
-		{
-			"name": "Operator, Misc",
-			"scope": [
-				"keyword.control",
-				"constant.other.color",
-				"punctuation",
-				"meta.tag",
-				"punctuation.definition.tag",
-				"punctuation.separator.inheritance.php",
-				"punctuation.definition.tag.html",
-				"punctuation.definition.tag.begin.html",
-				"punctuation.definition.tag.end.html",
-				"punctuation.section.embedded",
-				"keyword.other.template",
-				"keyword.other.substitution"
-			],
-			"settings": {
-				"foreground": "#89DDFF"
-			}
-		},
+        
 		{
 			"name": "Tag",
 			"scope": [
@@ -147,37 +206,8 @@
 				"foreground": "#f07178"
 			}
 		},
-		{
-			"name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
-			"scope": [
-				"constant.numeric",
-				"constant.language",
-				"support.constant",
-				"constant.character",
-				"constant.escape",
-				"variable.parameter",
-				"keyword.other.unit",
-				"keyword.other"
-			],
-			"settings": {
-				"foreground": "#F78C6C"
-			}
-		},
-		{
-			"name": "String, Symbols, Inherited Class, Markup Heading",
-			"scope": [
-				"string",
-				"constant.other.symbol",
-				"constant.other.key",
-				"entity.other.inherited-class",
-				"markup.heading",
-				"markup.inserted.git_gutter",
-				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
-			],
-			"settings": {
-				"foreground": "#C3E88D"
-			}
-		},
+		
+		
 		{
 			"name": "Class, Support",
 			"scope": [
@@ -373,6 +403,10 @@
 				"foreground": "#FF5370"
 			}
 		},
+
+
+
+        // JSON.
 		{
 			"name": "JSON Key - Level 0",
 			"scope": [
@@ -454,6 +488,11 @@
 				"foreground": "#C3E88D"
 			}
 		},
+
+
+
+
+        // Markdown.
 		{
 			"name": "Markdown - Plain",
 			"scope": [
@@ -495,6 +534,13 @@
                 "fontStyle": "bold"
 			}
 		},
+
+
+
+
+
+        // Markup.
+
 		{
 			"name": "Markup - Italic",
 			"scope": [
@@ -541,6 +587,11 @@
 				"foreground": "#F78C6C"
 			}
 		},
+
+
+
+
+        
 		{
 			"name": "Markdown - Blockquote",
 			"scope": [
@@ -586,6 +637,9 @@
 				"foreground": "#FFCB6B"
 			}
 		},
+
+
+        
 		{
 			"name": "Markup - Raw Block",
 			"scope": [
@@ -595,6 +649,8 @@
 				"foreground": "#C792EA"
 			}
 		},
+
+        
 		{
 			"name": "Markdown - Raw Block Fenced",
 			"scope": [
@@ -604,6 +660,9 @@
 				"foreground": "#00000050"
 			}
 		},
+
+
+        
 		{
 			"name": "Markdown - Fenced Bode Block",
 			"scope": [
